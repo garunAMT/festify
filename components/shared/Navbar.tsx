@@ -20,11 +20,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
+import { UserButton } from "@clerk/nextjs";
 import { ModeToggle } from "./ModeToggle";
-
 import Link from "next/link";
 import { Button } from "../ui/button";
+
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
@@ -59,7 +60,8 @@ const Navbar = () => {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-                  <Button>Sign Up</Button>
+              <SignedOut><Link href="/sign-in" passHref><Button>Sign In</Button></Link></SignedOut>
+              <SignedIn><UserButton /></SignedIn>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <ModeToggle />
@@ -71,7 +73,7 @@ const Navbar = () => {
       {/* ----------MOBILE NAVBAR-------------- */}
       <div className="md:hidden flex gap-2">
         <ModeToggle />
-        <Button>Sign Up</Button>
+        <UserButton />
         <Sheet>
           <SheetTrigger>
             <svg
