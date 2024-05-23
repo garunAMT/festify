@@ -4,10 +4,11 @@ import { BackgroundGradient } from "../ui/background-gradient";
 import { IconAppWindow } from "@tabler/icons-react";
 import Image from "next/image";
 import Jordans from "../../public/assets/jordans.webp"
+import Link from "next/link";
 
 export function EventCard() {
   return (
-    <div>
+    <Link href={"./events"}>
       <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
         <Image
           src={Jordans}
@@ -21,9 +22,7 @@ export function EventCard() {
         </p>
 
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
-          February 17, 2024. Your best opportunity to get these right now is by
-          entering raffles and waiting for the official releases.
+          Location: Sydney, Australia
         </p>
         <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-sm font-bold dark:bg-zinc-800">
           <span>Book now </span>
@@ -32,6 +31,6 @@ export function EventCard() {
           </span>
         </button>
       </BackgroundGradient>
-    </div>
+    </Link>
   );
 }

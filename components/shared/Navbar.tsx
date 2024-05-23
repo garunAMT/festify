@@ -29,7 +29,7 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 const Navbar = () => {
   return (
-    <div className="mx-4 py-1 flex justify-between sticky top-0 z-10">
+    <div className="mx-4 py-1 flex justify-between sticky top-0 z-10 bg-white dark:bg-gray-950">
       <div className="flex items-center justify-center">
         <h1 className="text-xl font-bold">Festify</h1>
       </div>
